@@ -1,0 +1,96 @@
+function allowNegativeNumber(e) 
+{
+  var charCode = (e.which) ? e.which : event.keyCode
+  if (charCode = 45 && (charCode < 45 || charCode > 52 )) {
+    return false;
+  }
+  return true;
+    
+}
+
+onkeypress="return allowNegativeNumber(event);"
+
+
+
+----
+
+
+
+
+function calcular()
+  {
+    var pontosSobra = document.getElementById('pontosTotal');
+   var pontosResto = Number(pontosSobra.value)
+
+
+
+
+    
+    var valorForca = document.getElementById('forcaValor')
+    var racaForca = document.getElementById('forcaRaca')
+    var bonusForca = document.getElementById('forcaBonus')
+
+    var valorInicFor = Number(valorForca.value)
+    var valorRacaFor = Number(racaForca.value)
+    var valorBonusFor = Number(bonusForca.value)
+
+    var totalForca =''
+      if
+      (valorInicFor > '3'){
+        valorInicFor = 4
+        document.querySelector('input[id="forcaValor"]').value = '4'
+        console.log("oi")
+        
+      }else{
+        console.log("11111")
+      }
+
+      if(valorInicFor < '-1'){
+        valorInicFor = -1
+        document.querySelector('input[id="forcaValor"]').value = '-1'
+        console.log("oi6")
+        }else{
+        console.log("rrrrrr")
+      }
+    
+      totalForca = (valorInicFor + valorRacaFor + valorBonusFor) 
+      document.querySelector('input[id="forcaTotal"]').value = ` ${totalForca}` 
+    
+
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    
+    var valorDest = document.getElementById('destValor')
+    var racaDest = document.getElementById('destRaca')
+    var bonusDest = document.getElementById('destBonus')
+
+    var valorInicDes = Number(valorDest.value)
+    var valorRacaDes = Number(racaDest.value)
+    var valorBonusDes = Number(bonusDest.value)
+
+    var totalDest =''
+    
+    totalDest = (valorInicDes + valorRacaDes + valorBonusDes) 
+    document.querySelector('input[id="destTotal"]').value = ` ${totalDest}`
+
+
+////conversor de valor em pontos///
+    
+    if (valorInicFor || valorInicDes === '-1'){
+      console.log("testes")
+      }else {console.log("beleza, não funfa")}
+
+
+
+
+
+///////ccálculo para subtração dos pontos///////
+
+  var sobraPontos =''
+
+  sobraPontos = (pontosResto - valorInicFor - valorInicDes)
+ document.querySelector('input[id="pontosTotal"]').value = `${sobraPontos}`
+  }
+
+//var resposta = document.getElementById('forcaTotal')//
